@@ -8,7 +8,7 @@ To get started, add the following scripts to your `package.json`:
 
 ```json
 "scripts": {
-	"start": "node node_modules/react-native/local-cli/cli.js start",
+  "start": "node node_modules/react-native/local-cli/cli.js start",
   "build": "bsb -make-world -clean-world",
   "watch": "bsb -make-world -clean-world -w"
 }
