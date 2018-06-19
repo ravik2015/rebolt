@@ -16,7 +16,7 @@ react-native init MyApp --template rebolt
 
 This will create a fresh React Native project using `rebolt` template, giving you the already preconfigured Reason environment out of the box.
 
-To better understand the integration between Reason and React Native,please see the following section that explains the manual integration step by step.
+To better understand the integration between Reason and React Native, please see the following section that explains the manual integration step by step.
 
 ## Adding ReasonML to your existing React Native project
 
