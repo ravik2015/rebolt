@@ -11,8 +11,10 @@
   "bs-dependencies": ["rebolt", "reason-react"],
   "sources": [
     {
-      "dir": "src"
+      "dir": "src",
+      "subdirs": true
     }
   ],
+  "suffix": ".bs.js",
   "refmt": 3
 }
