@@ -86,8 +86,8 @@ module Value: {
   let animate: (t, Animation.t, Animation.endCallback) => unit;
   let stopTracking: t => unit;
   let track: t => unit;
-  let modulo: (t, float) => t;
-  let diffClamp: (t, float, float) => t;
+  let modulo: (node('a), float) => node(calculated);
+  let diffClamp:  (node('a), float, float) => node(calculated);
   let add: (node('a), node('b)) => node(calculated);
   let divide: (node('a), node('b)) => node(calculated);
   let multiply: (node('a), node('b)) => node(calculated);
@@ -167,7 +167,9 @@ module ValueXY: {
   let removeListener: (t, string) => unit;
   let removeAllListeners: t => unit;
   let getLayout: t => layout;
-  let getTranslateTransform: t => translateTransform;
+	let getTranslateTransform: t => translateTransform;
+	let modulo: (node('a), float) => node(calculated);
+  let diffClamp:  (node('a), float, float) => node(calculated);
   let add: (node('a), node('b)) => node(calculated);
   let divide: (node('a), node('b)) => node(calculated);
   let multiply: (node('a), node('b)) => node(calculated);

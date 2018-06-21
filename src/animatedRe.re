@@ -223,12 +223,14 @@ module ValueAnimations = (Val: Value) => {
 module ValueOperations = {
   [@bs.module "react-native"] [@bs.scope "Animated"]
   external add : (node('a), node('b)) => node(calculated) = "";
-
   [@bs.module "react-native"] [@bs.scope "Animated"]
   external divide : (node('a), node('b)) => node(calculated) = "";
-
   [@bs.module "react-native"] [@bs.scope "Animated"]
-  external multiply : (node('a), node('b)) => node(calculated) = "";
+	external multiply : (node('a), node('b)) => node(calculated) = "";
+	[@bs.module "react-native"] [@bs.scope "Animated"]
+  external modulo : (node('a), float) => node(calculated) = "";
+  [@bs.module "react-native"] [@bs.scope "Animated"]
+  external diffClamp : (node('a), float, float) => node(calculated) = "";
 };
 
 module Interpolation = {
@@ -318,10 +320,6 @@ module Value = {
     "animate";
   [@bs.send] external stopTracking : t => unit = "stopTracking";
   [@bs.send] external track : t => unit = "track";
-  [@bs.module "react-native"] [@bs.scope "Animated"]
-  external modulo : (t, float) => t = "";
-  [@bs.module "react-native"] [@bs.scope "Animated"]
-  external diffClamp : (t, float, float) => t = "";
   include ValueAnimations({
     type t = node(value);
     type rawJsType = float;
@@ -375,7 +373,6 @@ module ValueXY = {
     type rawJsType = jsValue;
   });
   include ValueOperations;
-  let interpolate = Interpolation.interpolate;
 };
 
 [@bs.module "react-native"] [@bs.scope "Animated"]
