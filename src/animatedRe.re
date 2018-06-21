@@ -9,7 +9,6 @@ module type Value = {type t; type rawJsType;};
 type calculated;
 type value;
 type valueXY;
-type interpolated;
 type node('a);
 
 module CompositeAnimation = {
@@ -221,8 +220,19 @@ module ValueAnimations = (Val: Value) => {
   };
 };
 
+module ValueOperations = {
+  [@bs.module "react-native"] [@bs.scope "Animated"]
+  external add : (node('a), node('b)) => node(calculated) = "";
+
+  [@bs.module "react-native"] [@bs.scope "Animated"]
+  external divide : (node('a), node('b)) => node(calculated) = "";
+
+  [@bs.module "react-native"] [@bs.scope "Animated"]
+  external multiply : (node('a), node('b)) => node(calculated) = "";
+};
+
 module Interpolation = {
-  type t = node(interpolated);
+  type t = node(calculated);
   type outputRange;
   external outputRangeCreate : 'a => outputRange = "%identity";
   type extrapolate =
@@ -251,7 +261,7 @@ module Interpolation = {
   [@bs.send] external _interpolate : (node('a), config) => t = "interpolate";
   let interpolate =
       (
-        ~value,
+        value,
         ~inputRange,
         ~outputRange,
         ~easing=?,
@@ -316,6 +326,8 @@ module Value = {
     type t = node(value);
     type rawJsType = float;
   });
+  include ValueOperations;
+  let interpolate = Interpolation.interpolate;
 };
 
 module ValueXY = {
@@ -362,6 +374,8 @@ module ValueXY = {
     type t = node(valueXY);
     type rawJsType = jsValue;
   });
+  include ValueOperations;
+  let interpolate = Interpolation.interpolate;
 };
 
 [@bs.module "react-native"] [@bs.scope "Animated"]
@@ -388,15 +402,6 @@ external _loop :
 
 let loop = (~iterations=(-1), ~animation, ()) =>
   _loop(animation, {"iterations": iterations});
-
-[@bs.module "react-native"] [@bs.scope "Animated"]
-external add : (node('a), node('a)) => node(calculated) = "";
-
-[@bs.module "react-native"] [@bs.scope "Animated"]
-external divide : (node('a), node('a)) => node(calculated) = "";
-
-[@bs.module "react-native"] [@bs.scope "Animated"]
-external multiply : (node('a), node('a)) => node(calculated) = "";
 
 type animatedEvent;
 
