@@ -184,6 +184,8 @@ let animation = Animated.Spring.animate(
   ~bounciness=5.0,
   (),
 );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
 ```
 
 See available configuration below:
@@ -267,6 +269,8 @@ let animation = Animated.Timing.animate(
   ~duration=100.0,
   (),
 );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
 ```
 
 See available configuration below:
@@ -304,6 +308,8 @@ let animation = Animated.Decay.animate(
   ~velocity=100.0,
   (),
 );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
 ```
 
 See available configuration below:
@@ -322,15 +328,159 @@ See available configuration below:
 
 ## Composition
 
+Animations presented in the previous section can be combined all together in many complex ways using the following API.
+
 ### parallel
+
+```reason
+let parallel:
+  (array(CompositeAnimation.t), {. "stopTogether": bool}) =>
+  CompositeAnimation.t;
+```
+
+Runs an array of animations in parallel.
+
+#### Example
+
+```reason
+let fooValue = Animated.Value.create(0.0);
+let barValue = Animated.Value.create(0.0);
+
+let animation =
+  Animated.parallel(
+    [|
+      Animated.Timing.animate(
+        ~value=fooValue,
+        ~toValue=`raw(1.0),
+        ~duration=100.0,
+        (),
+      ),
+      Animated.Timing.animate(
+        ~value=barValue,
+        ~toValue=`raw(0.0),
+        ~duration=100.0,
+        (),
+      ),
+    |],
+    {"stopTogether": false},
+  );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
+```
+
+When `stopTogether` is set to `true`, `callback` passed to `CompositeAnimation.start` will get executed only once, after all animations within the array have finished. Otherwise, it may get executed many times. You should check for the value of `didFinish` boolean that is the first argument to the callback function.
 
 ### stagger
 
+```reason
+let stagger: (float, array(CompositeAnimation.t)) => CompositeAnimation.t;
+```
+
+Array of animations may run in parallel (overlap), but are started in sequence with successive delays.
+
+#### Example
+
+```reason
+let fooValue = Animated.Value.create(0.0);
+let barValue = Animated.Value.create(0.0);
+
+let animation =
+  Animated.stagger(
+    50.0,
+    [|
+      Animated.Timing.animate(
+        ~value=fooValue,
+        ~toValue=`raw(1.0),
+        ~duration=100.0,
+        (),
+      ),
+      Animated.Timing.animate(
+        ~value=barValue,
+        ~toValue=`raw(0.0),
+        ~duration=100.0,
+        (),
+      ),
+    |],
+  );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
+```
+
 ### delay
+
+```reason
+let delay: float => CompositeAnimation.t;
+```
+
+Helper function to delay execution of the animation. To be used with other Animated functions, as demonstrated at the below example.
+
+#### Example
+
+```reason
+let barValue = Animated.Value.create(0.0);
+
+let animation =
+  Animated.sequence(
+    [|
+      Animated.delay(500),
+      Animated.Timing.animate(
+        ~value=barValue,
+        ~toValue=`raw(0.0),
+        ~duration=100.0,
+        (),
+      ),
+    |],
+    {"stopTogether": false},
+  );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
+```
+
+The above example will delay the `barValue` animation by 500 milliseconds.
 
 ### sequence
 
+```reason
+let sequence: array(CompositeAnimation.t) => CompositeAnimation.t;
+```
+
+Starts an array of animations in order, waiting for each to complete before starting the next. If the current running animation is stopped, no following animations will be started.
+
+#### Example
+
+See the example [in the previous section](#delay).
+
 ### loop
+
+```reason
+let loop:
+  (~iterations: int=?, ~animation: CompositeAnimation.t, unit) =>
+  CompositeAnimation.t;
+```
+
+Loops a given animation continuously, so that each time it reaches the end, it resets and begins again from the start.
+
+You can specify the number of interations explicitly here or use [iterations](#iterations) property when defining animation.
+
+#### Example
+
+```reason
+let fooValue = Animated.Value.create(0.0);
+
+let animation =
+  Animated.loop(
+    ~animation=Animated.Timing.animate(
+      ~value=fooValue,
+      ~toValue=`raw(0.0),
+      ~iterations=4,
+      ~duration=100.0,
+      (),
+    ),
+    (),
+  );
+
+Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
+```
 
 ## Animated.Value
 
@@ -368,12 +518,36 @@ See available configuration below:
 
 ## CompositeAnimation
 
+All animations created with [Animations](#animations) or [Composition](#composition) APIs are an instance of `CompositeAnimation`. This module can be used to start, stop and reset such created objects.
+
 ### start
+
+```reason
+let start = (CompositeAnimation.t, ~callback: Animation.endCallback=?, unit) => unit;
+```
+
+Starts an animation
 
 ### stop
 
+```reason
+let stop = (CompositeAnimation.t) => unit;
+```
+
+Stops an animation
+
 ### reset
+
+```reason
+let reset = (CompositeAnimation.t) => unit;
+```
+
+Resets an animation
 
 ## Easing
 
 This module is exposed under `Animated` for historical reasons. Please see [`Easing`](/docs/easing.html) module instead.
+
+```
+
+```
