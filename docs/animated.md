@@ -132,3 +132,67 @@ let make = _children => {
   render: _self => <Animated.View style=containerStyle />,
 };
 ```
+
+# Animations
+
+## Spring
+
+## Timing
+
+## Decay
+
+# Composition
+
+## parallel
+
+## stagger
+
+## delay
+
+## sequence
+
+## loop
+
+# Animated.Value
+
+## create
+
+## add
+
+## divide
+
+## multiply
+
+## diffClamp
+
+## modulo
+
+## interpolate
+
+## setValue
+
+## setOffset
+
+## flattenOffset
+
+## extractOffset
+
+## addListener
+
+## removeListener
+
+## removeAllListeners
+
+## stopTracking
+
+## track
+
+# CompositeAnimation
+
+## start
+
+## stop
+
+## reset
+
+# Easing
