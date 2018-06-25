@@ -133,68 +133,68 @@ let make = _children => {
 };
 ```
 
-# Animations
+### Animations
 
-## Spring
+### Spring
 
-## Timing
+### Timing
 
-## Decay
+### Decay
 
-# Composition
+## Composition
 
-## parallel
+### parallel
 
-## stagger
+### stagger
 
-## delay
+### delay
 
-## sequence
+### sequence
 
-## loop
+### loop
 
-# Animated.Value
+## Animated.Value
 
-## create
+### create
 
-## add
+### add
 
-## divide
+### divide
 
-## multiply
+### multiply
 
-## diffClamp
+### diffClamp
 
-## modulo
+### modulo
 
-## interpolate
+### interpolate
 
-## setValue
+### setValue
 
-## setOffset
+### setOffset
 
-## flattenOffset
+### flattenOffset
 
-## extractOffset
+### extractOffset
 
-## addListener
+### addListener
 
-## removeListener
+### removeListener
 
-## removeAllListeners
+### removeAllListeners
 
-## stopTracking
+### stopTracking
 
-## track
+### track
 
-# CompositeAnimation
+## CompositeAnimation
 
-## start
+### start
 
-## stop
+### stop
 
-## reset
+### reset
 
-# Easing
+## Easing
 
 This module is exposed under `Animated` for historical reasons. Please see [`Easing`](/docs/easing.html) module instead.
