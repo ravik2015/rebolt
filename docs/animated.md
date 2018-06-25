@@ -484,37 +484,139 @@ Animated.CompositeAnimation.start(animation, ~callback=_didFinish => (), ());
 
 ## Animated.Value
 
+There are few types of Animated values present in React Native codebase. Not all operations are permitted on all of them.
+
+To prevent mistakes in user land and provide type safety, Rebolt uses phantom types to distinguish between different types of values:
+
+- `Animated.value(regular)` - created with `Animated.Value.create`. Can be animated, interpolated as well as used for math operations
+
+- `Animated.value(calculated)` - dynamic value created either by interpolating another animated value or by using math operations. Cannot be animated, because it's not a root animated value.
+
+In the below documentation, `Animated.value('a)` means that any animated value can be used.
+
 ### create
+
+```reason
+let create: float => Animated.Value.t;
+```
+
+Creates a new animated value.
 
 ### add
 
+```reason
+let add : (Animated.value('a), Animated.value('b)) => Animated.value(calculated);
+```
+
 ### divide
+
+```reason
+let divide : (Animated.value('a), Animated.value('b)) => Animated.value(calculated) = "";
+```
 
 ### multiply
 
+```reason
+let multiply : (Animated.value('a), Animated.value('b)) => Animated.value(calculated) = "";
+```
+
 ### diffClamp
+
+```reason
+let diffClamp : (Animated.value('a), float, float) => Animated.value(calculated) = "";
+```
 
 ### modulo
 
+```reason
+let diffClamp : (Animated.value('a), float) => Animated.value(calculated) = "";
+```
+
 ### interpolate
+
+Shorthand for [Animated.Interpolation.interpolate](#interpolation).
 
 ### setValue
 
+```reason
+let setValue: (t, float) => unit;
+```
+
 ### setOffset
+
+```reason
+let setOffset: (t, float) => unit;
+```
 
 ### flattenOffset
 
+```reason
+let flattenOffset: t => unit;
+```
+
 ### extractOffset
+
+```reason
+let extractOffset: t => unit;
+```
 
 ### addListener
 
+```reason
+let addListener: (t, callback) => string;
+```
+
 ### removeListener
+
+```reason
+let removeListener: (t, string) => unit;
+```
 
 ### removeAllListeners
 
+```reason
+let removeAllListeners: t => unit;
+```
+
 ### stopTracking
 
+```reason
+let removeAllListeners: t => unit;
+```
+
 ### track
+
+```reason
+let track: t => unit;
+```
+
+## Interpolation
+
+### interpolate
+
+```reason
+let interpolate:
+  (
+    Animated.value('a),
+    ~inputRange: list(float),
+    ~outputRange: [< | `float(list(float)) | `string(list(string))],
+    ~easing: Easing.t=?,
+    ~extrapolate: Interpolation.extrapolate=?,
+    ~extrapolateLeft: Interpolation.extrapolate=?,
+    ~extrapolateRight: Interpolation.extrapolate=?,
+    unit
+  ) =>
+ Animated.value(calculated)
+```
+
+### extrapolate
+
+```reason
+type extrapolate =
+  | Extend
+  | Clamp
+  | Identity;
+```
 
 ## CompositeAnimation
 
@@ -523,7 +625,7 @@ All animations created with [Animations](#animations) or [Composition](#composit
 ### start
 
 ```reason
-let start = (CompositeAnimation.t, ~callback: Animation.endCallback=?, unit) => unit;
+let start: (CompositeAnimation.t, ~callback: Animation.endCallback=?, unit) => unit;
 ```
 
 Starts an animation
@@ -531,7 +633,7 @@ Starts an animation
 ### stop
 
 ```reason
-let stop = (CompositeAnimation.t) => unit;
+let stop: (CompositeAnimation.t) => unit;
 ```
 
 Stops an animation
@@ -539,7 +641,7 @@ Stops an animation
 ### reset
 
 ```reason
-let reset = (CompositeAnimation.t) => unit;
+let reset: (CompositeAnimation.t) => unit;
 ```
 
 Resets an animation
@@ -547,7 +649,3 @@ Resets an animation
 ## Easing
 
 This module is exposed under `Animated` for historical reasons. Please see [`Easing`](/docs/easing.html) module instead.
-
-```
-
-```
