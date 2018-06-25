@@ -86,13 +86,13 @@ The following example demonstrates interpolation in order to map values of an an
 let animatedValue = Animated.Value.create(100.0);
 
 let animatedOpacity =
-	Animated.Value.interpolate(
-		animatedValue,
-		~inputRange=[0.0, 100.0],
-		~outputRange=`float([0.0, 1.0]),
-		~extrapolate=Animated.Interpolation.Clamp,
-		(),
-	);
+  Animated.Value.interpolate(
+    animatedValue,
+    ~inputRange=[0.0, 100.0],
+    ~outputRange=`float([0.0, 1.0]),
+    ~extrapolate=Animated.Interpolation.Clamp,
+    (),
+  );
 ```
 
 ### styling
@@ -109,26 +109,26 @@ let animatedValue = Animated.Value.create(0.0);
 let component = ReasonReact.statelessComponent("MyComponent");
 
 let containerStyle = Style.(
-	style([
-	  opacity(Animated(animatedValue))
-		flex(1.0)
-	])
+  style([
+    opacity(Animated(animatedValue))
+    flex(1.0)
+  ])
 );
 
 let make = _children => {
   ...component,
-	didMount: _self => {
-		Animated.CompositeAnimation.start(
-			Animated.Timing.animate(
-				~value=animatedValue,
-				~toValue=`raw(1.0),
-				~duration=100.0,
-				(),
-			),
-			~callback=_didFinish => (),
-			()
-		);
-	},
+  didMount: _self => {
+    Animated.CompositeAnimation.start(
+      Animated.Timing.animate(
+        ~value=animatedValue,
+        ~toValue=`raw(1.0),
+        ~duration=100.0,
+        (),
+      ),
+      ~callback=_didFinish => (),
+      ()
+    );
+  },
   render: _self => <Animated.View style=containerStyle />,
 };
 ```
