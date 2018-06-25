@@ -133,7 +133,7 @@ let make = _children => {
 };
 ```
 
-### Animations
+## Animations
 
 Animated provides three types of animation types. Each animation type provides a particular animation curve that controls how your values animate from their initial value to the final value.
 
@@ -165,16 +165,24 @@ Below is the list of common configuration options applicable to all below animat
 ~iterations: int=?
 ```
 
+#### isInteraction
+
+```reason
+~isInteraction: bool=?
+```
+
 ### Spring
 
 Provides a simple spring physics model.
 
 ```reason
+let animatedValue = Animated.Value.create(0.0);
+
 let animation = Animated.Spring.animate(
-	~value=animatedValue,
-	~toValue=`raw(1.0),
-	~bounciness=5.0,
-	(),
+  ~value=animatedValue,
+  ~toValue=`raw(1.0),
+  ~bounciness=5.0,
+  (),
 );
 ```
 
@@ -248,7 +256,69 @@ See available configuration below:
 
 ### Timing
 
+Animates a value over time using easing functions.
+
+```reason
+let animatedValue = Animated.Value.create(0.0);
+
+let animation = Animated.Timing.animate(
+  ~value=animatedValue,
+  ~toValue=`raw(1.0),
+  ~duration=100.0,
+  (),
+);
+```
+
+See available configuration below:
+
+#### easing
+
+```reason
+~easing: Easing.t=?
+```
+
+Easing function. See [Easing](/docs/easing.html) for available options.
+
+#### duration
+
+```reason
+~duration: float=?
+```
+
+#### delay
+
+```reason
+~delay: float=?
+```
+
 ### Decay
+
+Starts with an initial velocity and gradually slows to a stop.
+
+```reason
+let animatedValue = Animated.Value.create(0.0);
+
+let animation = Animated.Decay.animate(
+  ~value=animatedValue,
+  ~toValue=`raw(1.0),
+  ~velocity=100.0,
+  (),
+);
+```
+
+See available configuration below:
+
+#### velocity
+
+```reason
+~velocity: float
+```
+
+#### deceleration
+
+```reason
+~deceleration: float=?
+```
 
 ## Composition
 
