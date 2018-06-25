@@ -135,7 +135,116 @@ let make = _children => {
 
 ### Animations
 
+Animated provides three types of animation types. Each animation type provides a particular animation curve that controls how your values animate from their initial value to the final value.
+
+### Configuration
+
+Below is the list of common configuration options applicable to all below animations.
+
+#### toValue
+
+```reason
+~toValue: [ | `raw(float) | `animated(Animated.value))]
+```
+
+#### value
+
+```reason
+~value: Animated.value
+```
+
+#### useNativeDriver
+
+```reason
+~useNativeDriver: bool=?
+```
+
+#### iterations
+
+```reason
+~iterations: int=?
+```
+
 ### Spring
+
+Provides a simple spring physics model.
+
+```reason
+let animation = Animated.Spring.animate(
+	~value=animatedValue,
+	~toValue=`raw(1.0),
+	~bounciness=5.0,
+	(),
+);
+```
+
+See available configuration below:
+
+#### restDisplacementThreshold
+
+```reason
+~restDisplacementThreshold: float=?
+```
+
+#### overshootClamping
+
+```reason
+~overshootClamping: bool=?
+```
+
+#### restSpeedThreshold
+
+```reason
+~restSpeedThreshold: float=?
+```
+
+#### velocity
+
+```reason
+~velocity: float=?
+```
+
+#### bounciness
+
+```reason
+~bounciness: float=?
+```
+
+#### speed
+
+```reason
+~speed: float=?
+```
+
+#### tension
+
+```reason
+~tension: float=?
+```
+
+#### friction
+
+```reason
+~friction: float=?
+```
+
+#### stiffness
+
+```reason
+~stiffness: float=?
+```
+
+#### mass
+
+```reason
+~mass: float=?
+```
+
+#### damping
+
+```reason
+~damping: float=?
+```
 
 ### Timing
 
