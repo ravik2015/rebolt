@@ -196,3 +196,5 @@ let make = _children => {
 ## reset
 
 # Easing
+
+This module is exposed under `Animated` for historical reasons. Please see [`Easing`](/docs/easing.html) module instead.
