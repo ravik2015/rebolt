@@ -155,14 +155,6 @@ let handler =
 <ScrollView onScroll=handler />
 ```
 
-### custom component
-
-Sometimes you may want to animate a property of a component that does not support Animated module. Currently, the only supported components are built-in `Text`, `Image`, `View` and `ScrollView`. You can do so with the following API.
-
-```reason
-
-```
-
 ## Animations
 
 Animated provides three types of animation types. Each animation type provides a particular animation curve that controls how your values animate from their initial value to the final value.
