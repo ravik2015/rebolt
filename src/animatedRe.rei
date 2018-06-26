@@ -286,6 +286,12 @@ let decay:
   ) =>
   Animation.t;
 
+let stop: Animation.t => unit;
+
+let start: (Animation.t, ~callback: Animation.endCallback=?, unit) => unit;
+
+let reset: Animation.t => unit;
+
 /** Legacy interface */
 module Timing = Value.Timing;
 

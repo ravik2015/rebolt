@@ -388,6 +388,8 @@ let spring = Value.Spring.animate;
 
 let decay = Value.Decay.animate;
 
+include Animation;
+
 /* Legacy, to prevent breaking changes */
 module Easing = Easing;
 

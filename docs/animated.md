@@ -27,7 +27,7 @@ let animation =
     (),
   );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 ### multiple
@@ -57,7 +57,7 @@ let animation =
     ),
   |]);
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 ### calculation
@@ -118,7 +118,7 @@ let containerStyle = Style.(
 let make = _children => {
   ...component,
   didMount: _self => {
-    Animated.Animation.start(
+    Animated.start(
       Animated.timing(
         ~value=animatedValue,
         ~toValue=`raw(1.0),
@@ -132,6 +132,10 @@ let make = _children => {
   render: _self => <Animated.View style=containerStyle />,
 };
 ```
+
+### event
+
+### custom component
 
 ## Animations
 
@@ -185,7 +189,7 @@ let animation = Animated.spring(
   (),
 );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 See available configuration below:
@@ -270,7 +274,7 @@ let animation = Animated.timing(
   (),
 );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 See available configuration below:
@@ -309,7 +313,7 @@ let animation = Animated.decay(
   (),
 );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 See available configuration below:
@@ -365,7 +369,7 @@ let animation =
     {"stopTogether": false},
   );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 When `stopTogether` is set to `true`, `callback` passed to `Animation.start` will get executed only once, after all animations within the array have finished. Otherwise, it may get executed many times. You should check for the value of `didFinish` boolean that is the first argument to the callback function.
@@ -403,7 +407,7 @@ let animation =
     |],
   );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 ### delay
@@ -433,7 +437,7 @@ let animation =
     {"stopTogether": false},
   );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 The above example will delay the `barValue` animation by 500 milliseconds.
@@ -479,7 +483,7 @@ let animation =
     (),
   );
 
-Animated.Animation.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
 ## Animated.Value
@@ -618,11 +622,11 @@ type extrapolate =
   | Identity;
 ```
 
-## Animation
+## Animating
 
-This module can be used to start, stop and reset animations created in the previous sections.
+Following API can be used to control the animations.
 
-### start
+## start
 
 ```reason
 let start: (Animation.t, ~callback: Animation.endCallback=?, unit) => unit;
@@ -630,7 +634,7 @@ let start: (Animation.t, ~callback: Animation.endCallback=?, unit) => unit;
 
 Starts an animation
 
-### stop
+## stop
 
 ```reason
 let stop: (Animation.t) => unit;
@@ -638,7 +642,7 @@ let stop: (Animation.t) => unit;
 
 Stops an animation
 
-### reset
+## reset
 
 ```reason
 let reset: (Animation.t) => unit;
