@@ -135,7 +135,33 @@ let make = _children => {
 
 ### event
 
+You can map gestures and other events state directly to an animated value directly with `Animated.event`.
+
+```reason
+let animatedValue = Animated.Value.create(0.0);
+
+let handler =
+  Animated.event(
+    [|{
+        "nativeEvent": {
+          "contentOffset": {
+            "x": animatedValue,
+          },
+        },
+      }|],
+    {"useNativeDriver": true},
+  );
+
+<ScrollView onScroll=handler />
+```
+
 ### custom component
+
+Sometimes you may want to animate a property of a component that does not support Animated module. Currently, the only supported components are built-in `Text`, `Image`, `View` and `ScrollView`. You can do so with the following API.
+
+```reason
+
+```
 
 ## Animations
 
