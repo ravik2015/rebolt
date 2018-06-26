@@ -370,7 +370,7 @@ let animation =
 Animated.start(animation, ~callback=_didFinish => (), ());
 ```
 
-When `stopTogether` is set to `true`, `callback` passed to `Animation.start` will get executed only once, after all animations within the array have finished. Otherwise, it may get executed many times. You should check for the value of `didFinish` boolean that is the first argument to the callback function.
+When `stopTogether` is set to `true`, `callback` passed to `Animated.start` will get executed only once, after all animations within the array have finished. Otherwise, it may get executed many times. You should check for the value of `didFinish` boolean that is the first argument to the callback function.
 
 ### stagger
 
