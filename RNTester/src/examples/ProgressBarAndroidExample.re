@@ -12,6 +12,8 @@ let description = "Simple React Native ProgressBarAndroid component.";
 module ExampleHorizontal = {
   let component = ReasonReact.statelessComponent("ExampleHorizontal");
 
+  Js.log(AccessibilityInfo.fetch());
+
   let make = _children => {
     ...component,
     render: _children =>
