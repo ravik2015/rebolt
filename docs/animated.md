@@ -27,7 +27,7 @@ let animation =
     (),
   );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 ### multiple
@@ -57,7 +57,7 @@ let animation =
     ),
   |]);
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 ### calculation
@@ -189,7 +189,7 @@ let animation = Animated.spring(
   (),
 );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 See available configuration below:
@@ -274,7 +274,7 @@ let animation = Animated.timing(
   (),
 );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 See available configuration below:
@@ -313,7 +313,7 @@ let animation = Animated.decay(
   (),
 );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 See available configuration below:
@@ -369,7 +369,7 @@ let animation =
     {"stopTogether": false},
   );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 When `stopTogether` is set to `true`, `callback` passed to `Animated.start` will get executed only once, after all animations within the array have finished. Otherwise, it may get executed many times. You should check for the value of `didFinish` boolean that is the first argument to the callback function.
@@ -407,7 +407,7 @@ let animation =
     |],
   );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 ### delay
@@ -437,7 +437,7 @@ let animation =
     {"stopTogether": false},
   );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 The above example will delay the `barValue` animation by 500 milliseconds.
@@ -483,7 +483,7 @@ let animation =
     (),
   );
 
-Animated.start(animation, ~callback=_didFinish => (), ());
+Animated.start(animation, ());
 ```
 
 ## Animated.Value
@@ -632,7 +632,7 @@ Following API can be used to control the animations.
 let start: (Animation.t, ~callback: Animation.endCallback=?, unit) => unit;
 ```
 
-Starts an animation
+Starts an animation.
 
 ## stop
 
