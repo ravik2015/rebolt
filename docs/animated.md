@@ -327,10 +327,8 @@ See available configuration below:
 #### deceleration
 
 ```reason
-~deceleration: float=?
-```
 
-## Composition
+```
 
 Animations presented in the previous section can be combined all together in many complex ways using the following API.
 
