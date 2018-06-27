@@ -1,16 +1,8 @@
 let make:
   (
-    ~accessibilityLabel: string=?,
+    ~maskElement: ReasonReact.reactElement,
     ~accessible: bool=?,
-    ~hitSlop: Types.insets=?,
-    ~onAccessibilityTap: unit => unit=?,
-    ~onLayout: RNEvent.NativeLayoutEvent.t => unit=?,
-    ~onMagicTap: unit => unit=?,
-    ~responderHandlers: Types.touchResponderHandlers=?,
-    ~pointerEvents: [ | `auto | `boxNone | `boxOnly | `none]=?,
-    ~removeClippedSubviews: bool=?,
-    ~style: Style.t=?,
-    ~testID: string=?,
+    ~accessibilityLabel: string=?,
     ~accessibilityComponentType: [
                                    | `button
                                    | `none
@@ -18,13 +10,8 @@ let make:
                                    | `radiobutton_unchecked
                                  ]
                                    =?,
-    ~accessibilityLiveRegion: [ | `assertive | `none | `polite]=?,
-    ~collapsable: bool=?,
-    ~importantForAccessibility: [ | `auto | `no | `noHideDescendants | `yes]=?,
-    ~needsOffscreenAlphaCompositing: bool=?,
-    ~renderToHardwareTextureAndroid: bool=?,
     ~accessibilityTraits: list(
-                            [
+                            [<
                               | `adjustable
                               | `allowsDirectInteraction
                               | `button
@@ -45,6 +32,20 @@ let make:
                             ],
                           )
                             =?,
+    ~onAccessibilityTap: unit => unit=?,
+    ~hitSlop: Types.insets=?,
+    ~onLayout: RNEvent.NativeLayoutEvent.t => unit=?,
+    ~onMagicTap: unit => unit=?,
+    ~responderHandlers: Types.touchResponderHandlers=?,
+    ~pointerEvents: [ | `auto | `boxNone | `boxOnly | `none]=?,
+    ~removeClippedSubviews: bool=?,
+    ~style: Style.t=?,
+    ~testID: string=?,
+    ~accessibilityLiveRegion: [ | `assertive | `none | `polite]=?,
+    ~collapsable: bool=?,
+    ~importantForAccessibility: [ | `auto | `no | `noHideDescendants | `yes]=?,
+    ~needsOffscreenAlphaCompositing: bool=?,
+    ~renderToHardwareTextureAndroid: bool=?,
     ~accessibilityViewIsModal: bool=?,
     ~shouldRasterizeIOS: bool=?,
     array(ReasonReact.reactElement)
@@ -52,5 +53,5 @@ let make:
   ReasonReact.component(
     ReasonReact.stateless,
     ReasonReact.noRetainedProps,
-    unit,
+    ReasonReact.actionless,
   );
