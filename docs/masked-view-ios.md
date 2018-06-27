@@ -1,5 +1,5 @@
 ---
-title: MaskedViewIOS (x)
+title: MaskedViewIOS
 ---
 
 ## Example of use
