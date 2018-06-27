@@ -1,9 +1,9 @@
 [@bs.module "react-native"]
-external progressViewIOS : ReasonReact.reactClass = "MaskedViewIOS";
+external view : ReasonReact.reactClass = "MaskedViewIOS";
 
 let make =
     (
-      ~maskElement,
+      ~maskElement: ReasonReact.reactElement,
       ~accessible=?,
       ~accessibilityLabel=?,
       ~accessibilityComponentType=?,
@@ -26,7 +26,7 @@ let make =
       ~shouldRasterizeIOS=?,
     ) =>
   ReasonReact.wrapJsForReason(
-    ~reactClass=progressViewIOS,
+    ~reactClass=view,
     ~props=
       Props.extendView(
         ~accessibilityLabel?,

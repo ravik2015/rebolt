@@ -1,17 +1,30 @@
 let make:
   (
-    ~maskElement: 'a,
-    ~accessible: 'b=?,
-    ~accessibilityLabel: 'c=?,
-    ~accessibilityComponentType: [<
+    ~accessibilityLabel: string=?,
+    ~accessible: bool=?,
+    ~hitSlop: Types.insets=?,
+    ~onAccessibilityTap: unit => unit=?,
+    ~onLayout: RNEvent.NativeLayoutEvent.t => unit=?,
+    ~onMagicTap: unit => unit=?,
+    ~responderHandlers: Types.touchResponderHandlers=?,
+    ~pointerEvents: [ | `auto | `boxNone | `boxOnly | `none]=?,
+    ~removeClippedSubviews: bool=?,
+    ~style: Style.t=?,
+    ~testID: string=?,
+    ~accessibilityComponentType: [
                                    | `button
                                    | `none
                                    | `radiobutton_checked
                                    | `radiobutton_unchecked
                                  ]
                                    =?,
+    ~accessibilityLiveRegion: [ | `assertive | `none | `polite]=?,
+    ~collapsable: bool=?,
+    ~importantForAccessibility: [ | `auto | `no | `noHideDescendants | `yes]=?,
+    ~needsOffscreenAlphaCompositing: bool=?,
+    ~renderToHardwareTextureAndroid: bool=?,
     ~accessibilityTraits: list(
-                            [<
+                            [
                               | `adjustable
                               | `allowsDirectInteraction
                               | `button
@@ -32,26 +45,12 @@ let make:
                             ],
                           )
                             =?,
-    ~onAccessibilityTap: 'd=?,
-    ~hitSlop: 'e=?,
-    ~onLayout: 'f=?,
-    ~onMagicTap: 'g=?,
-    ~responderHandlers: Rebolt.Types.touchResponderHandlers=?,
-    ~pointerEvents: [< | `auto | `boxNone | `boxOnly | `none]=?,
-    ~removeClippedSubviews: 'h=?,
-    ~style: 'i=?,
-    ~testID: 'j=?,
-    ~accessibilityLiveRegion: [< | `assertive | `none | `polite]=?,
-    ~collapsable: 'k=?,
-    ~importantForAccessibility: [< | `auto | `no | `noHideDescendants | `yes]=?,
-    ~needsOffscreenAlphaCompositing: 'l=?,
-    ~renderToHardwareTextureAndroid: 'm=?,
-    ~accessibilityViewIsModal: 'n=?,
-    ~shouldRasterizeIOS: 'o=?,
-    'p
+    ~accessibilityViewIsModal: bool=?,
+    ~shouldRasterizeIOS: bool=?,
+    array(ReasonReact.reactElement)
   ) =>
   ReasonReact.component(
     ReasonReact.stateless,
     ReasonReact.noRetainedProps,
-    ReasonReact.actionless,
+    unit,
   );
