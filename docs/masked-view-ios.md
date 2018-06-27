@@ -37,10 +37,10 @@ let make = _children => {
           </Text>
         </View>
       }>
-				<View
-					style=Style.(style([flex(1.), backgroundColor(String("red"))]))
-				/>
-		  </MaskedViewIOS>,
+        <View
+          style=Style.(style([flex(1.), backgroundColor(String("red"))]))
+        />
+      </MaskedViewIOS>,
 };
 ```
 
