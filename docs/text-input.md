@@ -1,24 +1,22 @@
 ---
-id: text-input
 title: TextInput
-sidebar_label: TextInput
 ---
 
-# Props
+## Props
 
-## accessibilityLabel
+### accessibilityLabel
 
 ```reason
 accessibilityLabel: ReasonReact.reactElement=?
 ```
 
-## accessible
+### accessible
 
 ```reason
 accessible: bool=?
 ```
 
-## hitSlop
+### hitSlop
 
 ```reason
 hitSlop: {
@@ -30,13 +28,13 @@ hitSlop: {
 }=?
 ```
 
-## onAccessibilityTap
+### onAccessibilityTap
 
 ```reason
 onAccessibilityTap: unit => unit=?
 ```
 
-## onLayout
+### onLayout
 
 ```reason
 onLayout: RNEvent.NativeLayoutEvent.t => unit=?
@@ -57,13 +55,13 @@ module NativeLayoutEvent: {
 };
 ```
 
-## onMagicTap
+### onMagicTap
 
 ```reason
 onMagicTap: unit => unit=?
 ```
 
-## responderHandlers
+### responderHandlers
 
 ```reason
 responderHandlers: Types.touchResponderHandlers=?
@@ -106,7 +104,7 @@ module NativeEvent: {
 };
 ```
 
-## pointerEvents
+### pointerEvents
 
 ```reason
 pointerEvents: [
@@ -117,25 +115,25 @@ pointerEvents: [
 ]=?
 ```
 
-## removeClippedSubviews
+### removeClippedSubviews
 
 ```reason
 removeClippedSubviews: bool=?
 ```
 
-## style
+### style
 
 ```reason
 style: Style.t=?
 ```
 
-## testID
+### testID
 
 ```reason
 testID: string=?
 ```
 
-## accessibilityComponentType
+### accessibilityComponentType
 
 ```reason
 accessibilityComponentType: [
@@ -146,7 +144,7 @@ accessibilityComponentType: [
 ]=?
 ```
 
-## accessibilityLiveRegion
+### accessibilityLiveRegion
 
 ```reason
 accessibilityLiveRegion: [
@@ -156,13 +154,13 @@ accessibilityLiveRegion: [
 ]=?
 ```
 
-## collapsable
+### collapsable
 
 ```reason
 collapsable: bool=?
 ```
 
-## importantForAccessibility
+### importantForAccessibility
 
 ```reason
 importantForAccessibility: [
@@ -173,19 +171,19 @@ importantForAccessibility: [
 ]=?
 ```
 
-## needsOffscreenAlphaCompositing
+### needsOffscreenAlphaCompositing
 
 ```reason
 needsOffscreenAlphaCompositing: bool=?
 ```
 
-## renderToHardwareTextureAndroid
+### renderToHardwareTextureAndroid
 
 ```reason
 renderToHardwareTextureAndroid: bool=?
 ```
 
-## accessibilityTraits
+### accessibilityTraits
 
 ```reason
 accessibilityTraits: list(
@@ -211,19 +209,19 @@ accessibilityTraits: list(
 )=?
 ```
 
-## accessibilityViewIsModal
+### accessibilityViewIsModal
 
 ```reason
 accessibilityViewIsModal: bool=?
 ```
 
-## shouldRasterizeIOS
+### shouldRasterizeIOS
 
 ```reason
 shouldRasterizeIOS: bool=?
 ```
 
-## autoCapitalize
+### autoCapitalize
 
 ```reason
 autoCapitalize: [<
@@ -234,43 +232,43 @@ autoCapitalize: [<
 ]=?
 ```
 
-## autoCorrect
+### autoCorrect
 
 ```reason
 autoCorrect: bool=?
 ```
 
-## autoFocus
+### autoFocus
 
 ```reason
 autoFocus: bool=?
 ```
 
-## blurOnSubmit
+### blurOnSubmit
 
 ```reason
 blurOnSubmit: bool=?
 ```
 
-## caretHidden
+### caretHidden
 
 ```reason
 caretHidden: bool=?
 ```
 
-## defaultValue
+### defaultValue
 
 ```reason
 defaultValue: string=?
 ```
 
-## editable
+### editable
 
 ```reason
 editable: bool=?
 ```
 
-## keyboardType
+### keyboardType
 
 ```reason
 keyboardType: [
@@ -289,37 +287,37 @@ keyboardType: [
 ]=?
 ```
 
-## maxLength
+### maxLength
 
 ```reason
 maxLength: int=?
 ```
 
-## multiline
+### multiline
 
 ```reason
 multiline: bool=?
 ```
 
-## onBlur
+### onBlur
 
 ```reason
 onBlur: unit => unit=?
 ```
 
-## onChange
+### onChange
 
 ```reason
 onChange: unit => unit=?
 ```
 
-## onChangeText
+### onChangeText
 
 ```reason
 onChangeText: string => unit=?
 ```
 
-## onContentSizeChange
+### onContentSizeChange
 
 ```reason
 onContentSizeChange: {
@@ -335,19 +333,19 @@ onContentSizeChange: {
 } => unit=?
 ```
 
-## onEndEditing
+### onEndEditing
 
 ```reason
 onEndEditing: unit => unit=?
 ```
 
-## onFocus
+### onFocus
 
 ```reason
 onFocus: unit => unit=?
 ```
 
-## onScroll
+### onScroll
 
 ```reason
 onScroll: {
@@ -363,7 +361,7 @@ onScroll: {
 } => unit=?
 ```
 
-## onSelectionChange
+### onSelectionChange
 
 ```reason
 onSelectionChange: {
@@ -379,25 +377,25 @@ onSelectionChange: {
 } => unit=?
 ```
 
-## onSubmitEditing
+### onSubmitEditing
 
 ```reason
 onSubmitEditing: unit => unit=?
 ```
 
-## placeholder
+### placeholder
 
 ```reason
 placeholder: string=?
 ```
 
-## placeholderTextColor
+### placeholderTextColor
 
 ```reason
 placeholderTextColor: string=?
 ```
 
-## returnKeyType
+### returnKeyType
 
 ```reason
 returnKeyType: [
@@ -417,19 +415,19 @@ returnKeyType: [
 ]=?
 ```
 
-## secureTextEntry
+### secureTextEntry
 
 ```reason
 secureTextEntry: bool=?
 ```
 
-## selectTextOnFocus
+### selectTextOnFocus
 
 ```reason
 selectTextOnFocus: bool=?
 ```
 
-## selection
+### selection
 
 ```reason
 selection: {
@@ -439,49 +437,49 @@ selection: {
 }=?
 ```
 
-## selectionColor
+### selectionColor
 
 ```reason
 selectionColor: string=?
 ```
 
-## value
+### value
 
 ```reason
 value: string=?
 ```
 
-## disableFullscreenUI
+### disableFullscreenUI
 
 ```reason
 disableFullscreenUI: bool=?
 ```
 
-## inlineImageLeft
+### inlineImageLeft
 
 ```reason
 inlineImageLeft: string=?
 ```
 
-## inlineImagePadding
+### inlineImagePadding
 
 ```reason
 inlineImagePadding: int=?
 ```
 
-## numberOfLines
+### numberOfLines
 
 ```reason
 numberOfLines: int=?
 ```
 
-## returnKeyLabel
+### returnKeyLabel
 
 ```reason
 returnKeyLabel: string=?
 ```
 
-## textBreakStrategy
+### textBreakStrategy
 
 ```reason
 textBreakStrategy: [
@@ -491,13 +489,13 @@ textBreakStrategy: [
 ]=?
 ```
 
-## underlineColorAndroid
+### underlineColorAndroid
 
 ```reason
 underlineColorAndroid: string=?
 ```
 
-## clearButtonMode
+### clearButtonMode
 
 ```reason
 clearButtonMode: [
@@ -508,13 +506,13 @@ clearButtonMode: [
 ]=?
 ```
 
-## clearTextOnFocus
+### clearTextOnFocus
 
 ```reason
 clearTextOnFocus: bool=?
 ```
 
-## dataDetectorTypes
+### dataDetectorTypes
 
 ```reason
 dataDetectorTypes: array([
@@ -526,13 +524,13 @@ dataDetectorTypes: array([
 ])=?
 ```
 
-## enablesReturnKeyAutomatically
+### enablesReturnKeyAutomatically
 
 ```reason
 enablesReturnKeyAutomatically: bool=?
 ```
 
-## keyboardAppearance
+### keyboardAppearance
 
 ```reason
 keyboardAppearance: [
@@ -542,7 +540,7 @@ keyboardAppearance: [
 ]=?
 ```
 
-## onKeyPress
+### onKeyPress
 
 ```reason
 onKeyPress: {
@@ -554,13 +552,13 @@ onKeyPress: {
 } => unit=?
 ```
 
-## selectionState
+### selectionState
 
 ```reason
 selectionState: 'documentSelectionState=?
 ```
 
-## spellCheck
+### spellCheck
 
 ```reason
 spellCheck: bool=?

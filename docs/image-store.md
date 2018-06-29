@@ -1,5 +1,9 @@
 ---
-id: image-store
-title: ImageStore
-sidebar_label: ImageStore
+title: ImageStore (x)
 ---
+
+Missing bindings
+
+## Example of use
+
+## Function parameters

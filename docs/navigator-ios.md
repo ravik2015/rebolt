@@ -1,9 +1,7 @@
 ---
-id: navigator-ios
-title: NavigatorIOS
-sidebar_label: NavigatorIOS (x)
+title: NavigatorIOS (x)
 ---
 
-Missing bindings
+## Example of use
 
-# Props
+## Props

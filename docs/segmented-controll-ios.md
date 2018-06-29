@@ -1,66 +1,64 @@
 ---
-id: segmented-controll-ios
 title: SegmentedControllIOS
-sidebar_label: SegmentedControllIOS
 ---
 
-# Props
+## Props
 
-## values
+### values
 
 ```reason
 values: list(string)
 ```
 
-## selectedIndex
+### selectedIndex
 
 ```reason
 selectedIndex: int=?
 ```
 
-## onChange
+### onChange
 
 ```reason
 onChange: RNEvent.t => unit=?
 ```
 
-## enabled
+### enabled
 
 ```reason
 enabled: bool=?
 ```
 
-## momentary
+### momentary
 
 ```reason
 momentary: bool=?
 ```
 
-## tintColor
+### tintColor
 
 ```reason
 tintColor: string=?
 ```
 
-## onValueChange
+### onValueChange
 
 ```reason
 onValueChange: string => unit=?
 ```
 
-## accessibilityLabel
+### accessibilityLabel
 
 ```reason
 accessibilityLabel: ReasonReact.reactElement=?
 ```
 
-## accessible
+### accessible
 
 ```reason
 accessible: bool=?
 ```
 
-## hitSlop
+### hitSlop
 
 ```reason
 hitSlop: Types.insets=?
@@ -80,13 +78,13 @@ type insets = {
 };
 ```
 
-## onAccessibilityTap
+### onAccessibilityTap
 
 ```reason
 onAccessibilityTap: unit => unit=?
 ```
 
-## onLayout
+### onLayout
 
 ```reason
 onLayout: RNEvent.NativeLayoutEvent.t => unit=?
@@ -107,13 +105,13 @@ module NativeLayoutEvent: {
 };
 ```
 
-## onMagicTap
+### onMagicTap
 
 ```reason
 onMagicTap: unit => unit=?
 ```
 
-## responderHandlers
+### responderHandlers
 
 ```reason
 responderHandlers: Types.touchResponderHandlers=?
@@ -156,7 +154,7 @@ module NativeEvent: {
 };
 ```
 
-## pointerEvents
+### pointerEvents
 
 ```reason
 pointerEvents: [
@@ -167,25 +165,25 @@ pointerEvents: [
 ]=?,
 ```
 
-## removeClippedSubviews
+### removeClippedSubviews
 
 ```reason
 removeClippedSubviews: bool=?
 ```
 
-## style
+### style
 
 ```reason
 style: Style.t=?
 ```
 
-## testID
+### testID
 
 ```reason
 testID: string=?
 ```
 
-## accessibilityComponentType
+### accessibilityComponentType
 
 ```reason
 accessibilityComponentType: [
@@ -196,7 +194,7 @@ accessibilityComponentType: [
 ]=?
 ```
 
-## accessibilityLiveRegion
+### accessibilityLiveRegion
 
 ```reason
 accessibilityLiveRegion: [
@@ -206,13 +204,13 @@ accessibilityLiveRegion: [
 ]=?
 ```
 
-## collapsable
+### collapsable
 
 ```reason
 collapsable: bool=?
 ```
 
-## importantForAccessibility
+### importantForAccessibility
 
 ```reason
 importantForAccessibility: [
@@ -223,19 +221,19 @@ importantForAccessibility: [
 ]=?
 ```
 
-## needsOffscreenAlphaCompositing
+### needsOffscreenAlphaCompositing
 
 ```reason
 needsOffscreenAlphaCompositing: bool=?
 ```
 
-## renderToHardwareTextureAndroid
+### renderToHardwareTextureAndroid
 
 ```reason
 renderToHardwareTextureAndroid: bool=?
 ```
 
-## accessibilityTraits
+### accessibilityTraits
 
 ```reason
 accessibilityTraits:
@@ -262,13 +260,13 @@ accessibilityTraits:
   )=?
 ```
 
-## accessibilityViewIsModal
+### accessibilityViewIsModal
 
 ```reason
 accessibilityViewIsModal: bool=?
 ```
 
-## shouldRasterizeIOS
+### shouldRasterizeIOS
 
 ```reason
 shouldRasterizeIOS: bool=?

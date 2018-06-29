@@ -1,9 +1,7 @@
 ---
-id: toolbar-android
-title: ToolbarAndroid
-sidebar_label: ToolbarAndroid (x)
+title: ToolbarAndroid (x)
 ---
 
-Missing bindings
+## Example of use
 
-# Props
+## Props

@@ -1,84 +1,82 @@
 ---
-id: tab-bar-ios-item
 title: TabBarIOS.Item
-sidebar_label: TabBarIOS.Item
 ---
 
-# Props
+## Props
 
-## title
+### title
 
 ```reason
 title: string=?
 ```
 
-## badgeColor
+### badgeColor
 
 ```reason
 badgeColor: string=?
 ```
 
-## badge
+### badge
 
 ```reason
 badge: string=?
 ```
 
-## icon
+### icon
 
 ```reason
 icon: Image.imageSource=?
 ```
 
-## onPress
+### onPress
 
 ```reason
 onPress: unit => unit=?
 ```
 
-## renderAsOriginal
+### renderAsOriginal
 
 ```reason
 renderAsOriginal: bool=?
 ```
 
-## style
+### style
 
 ```reason
 style: Style.t=?
 ```
 
-## selected
+### selected
 
 ```reason
 selected: bool=?
 ```
 
-## selectedIcon
+### selectedIcon
 
 ```reason
 selectedIcon: Image.imageSource=?
 ```
 
-## isTVSelectable
+### isTVSelectable
 
 ```reason
 isTVSelectable: bool=?
 ```
 
-## accessibilityLabel
+### accessibilityLabel
 
 ```reason
 accessibilityLabel: ReasonReact.reactElement=?
 ```
 
-## accessible
+### accessible
 
 ```reason
 accessible: bool=?
 ```
 
-## hitSlop
+### hitSlop
 
 ```reason
 hitSlop: Types.insets=?
@@ -99,13 +97,13 @@ module NativeLayoutEvent: {
 };
 ```
 
-## onAccessibilityTap
+### onAccessibilityTap
 
 ```reason
 onAccessibilityTap: unit => unit=?
 ```
 
-## onLayout
+### onLayout
 
 ```reason
 onLayout: RNEvent.NativeLayoutEvent.t => unit=?
@@ -126,13 +124,13 @@ module NativeLayoutEvent: {
 };
 ```
 
-## onMagicTap
+### onMagicTap
 
 ```reason
 onMagicTap: unit => unit=?
 ```
 
-## responderHandlers
+### responderHandlers
 
 ```reason
 responderHandlers: Types.touchResponderHandlers=?
@@ -175,7 +173,7 @@ module NativeEvent: {
 };
 ```
 
-## pointerEvents
+### pointerEvents
 
 ```reason
 pointerEvents: [
@@ -186,19 +184,19 @@ pointerEvents: [
 ]=?
 ```
 
-## removeClippedSubviews
+### removeClippedSubviews
 
 ```reason
 removeClippedSubviews: bool=?
 ```
 
-## testID
+### testID
 
 ```reason
 testID: string=?
 ```
 
-## accessibilityComponentType
+### accessibilityComponentType
 
 ```reason
 accessibilityComponentType: [
@@ -209,7 +207,7 @@ accessibilityComponentType: [
 ]=?
 ```
 
-## accessibilityLiveRegion
+### accessibilityLiveRegion
 
 ```reason
 accessibilityLiveRegion: [
@@ -219,13 +217,13 @@ accessibilityLiveRegion: [
 ]=?
 ```
 
-## collapsable
+### collapsable
 
 ```reason
 collapsable: bool=?
 ```
 
-## importantForAccessibility
+### importantForAccessibility
 
 ```reason
 importantForAccessibility: [
@@ -236,19 +234,19 @@ importantForAccessibility: [
 ]=?
 ```
 
-## needsOffscreenAlphaCompositing
+### needsOffscreenAlphaCompositing
 
 ```reason
 needsOffscreenAlphaCompositing: bool=?
 ```
 
-## renderToHardwareTextureAndroid
+### renderToHardwareTextureAndroid
 
 ```reason
 renderToHardwareTextureAndroid: bool=?
 ```
 
-## accessibilityTraits
+### accessibilityTraits
 
 ```reason
 accessibilityTraits: list(
@@ -274,13 +272,13 @@ accessibilityTraits: list(
 )=?
 ```
 
-## accessibilityViewIsModal
+### accessibilityViewIsModal
 
 ```reason
 accessibilityViewIsModal: bool=?
 ```
 
-## shouldRasterizeIOS
+### shouldRasterizeIOS
 
 ```reason
 shouldRasterizeIOS: bool=?

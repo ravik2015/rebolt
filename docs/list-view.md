@@ -1,9 +1,7 @@
 ---
-id: list-view
-title: ListView
-sidebar_label: ListView (x)
+title: ListView (x)
 ---
 
-Missing bindings
+## Example of use
 
-# Props
+## Props

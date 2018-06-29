@@ -1,24 +1,22 @@
 ---
-id: scroll-view
 title: ScrollView
-sidebar_label: ScrollView
 ---
 
-# Props
+## Props
 
-## accessibilityLabel
+### accessibilityLabel
 
 ```reason
 accessibilityLabel: ReasonReact.reactElement=?
 ```
 
-## accessible
+### accessible
 
 ```reason
 accessible: bool=?
 ```
 
-## hitSlop
+### hitSlop
 
 ```reason
 hitSlop: Types.insets=?
@@ -38,13 +36,13 @@ type insets = {
 };
 ```
 
-## onAccessibilityTap
+### onAccessibilityTap
 
 ```reason
 onAccessibilityTap: unit => unit=?
 ```
 
-## onLayout
+### onLayout
 
 ```reason
 onLayout: RNEvent.NativeLayoutEvent.t => unit=?
@@ -65,13 +63,13 @@ module NativeLayoutEvent: {
 };
 ```
 
-## onMagicTap
+### onMagicTap
 
 ```reason
 onMagicTap: unit => unit=?
 ```
 
-## responderHandlers
+### responderHandlers
 
 ```reason
 responderHandlers: Types.touchResponderHandlers=?
@@ -114,7 +112,7 @@ module NativeEvent: {
 };
 ```
 
-## pointerEvents
+### pointerEvents
 
 ```reason
 pointerEvents: [
@@ -125,25 +123,25 @@ pointerEvents: [
 ]=?
 ```
 
-## removeClippedSubviews
+### removeClippedSubviews
 
 ```reason
 removeClippedSubviews: bool=?
 ```
 
-## style
+### style
 
 ```reason
 style: Style.t=?
 ```
 
-## testID
+### testID
 
 ```reason
 testID: string=?
 ```
 
-## accessibilityComponentType
+### accessibilityComponentType
 
 ```reason
 accessibilityComponentType: [
@@ -154,7 +152,7 @@ accessibilityComponentType: [
 ]=?
 ```
 
-## accessibilityLiveRegion
+### accessibilityLiveRegion
 
 ```reason
 accessibilityLiveRegion: [
@@ -164,13 +162,13 @@ accessibilityLiveRegion: [
 ]=?
 ```
 
-## collapsable
+### collapsable
 
 ```reason
 collapsable: bool=?
 ```
 
-## importantForAccessibility
+### importantForAccessibility
 
 ```reason
 importantForAccessibility: [
@@ -181,19 +179,19 @@ importantForAccessibility: [
 ]=?
 ```
 
-## needsOffscreenAlphaCompositing
+### needsOffscreenAlphaCompositing
 
 ```reason
 needsOffscreenAlphaCompositing: bool=?
 ```
 
-## renderToHardwareTextureAndroid
+### renderToHardwareTextureAndroid
 
 ```reason
 renderToHardwareTextureAndroid: bool=?
 ```
 
-## accessibilityTraits
+### accessibilityTraits
 
 ```reason
 accessibilityTraits:
@@ -220,31 +218,31 @@ accessibilityTraits:
   )=?
 ```
 
-## accessibilityViewIsModal
+### accessibilityViewIsModal
 
 ```reason
 accessibilityViewIsModal: bool=?
 ```
 
-## shouldRasterizeIOS
+### shouldRasterizeIOS
 
 ```reason
 shouldRasterizeIOS: bool=?
 ```
 
-## contentContainerStyle
+### contentContainerStyle
 
 ```reason
 contentContainerStyle: Style.t=?
 ```
 
-## horizontal
+### horizontal
 
 ```reason
 horizontal: bool=?
 ```
 
-## keyboardDismissMode
+### keyboardDismissMode
 
 ```reason
 keyboardDismissMode: [
@@ -254,7 +252,7 @@ keyboardDismissMode: [
 ]=?
 ```
 
-## keyboardShouldPersistTaps
+### keyboardShouldPersistTaps
 
 ```reason
 keyboardShouldPersistTaps: [
@@ -264,13 +262,13 @@ keyboardShouldPersistTaps: [
 ]=?
 ```
 
-## onContentSizeChange
+### onContentSizeChange
 
 ```reason
 onContentSizeChange: ((float, float)) => unit=?
 ```
 
-## onScroll
+### onScroll
 
 ```reason
 onScroll: RNEvent.NativeScrollEvent.t => unit=?
@@ -304,43 +302,43 @@ module NativeScrollEvent: {
 };
 ```
 
-## pagingEnabled
+### pagingEnabled
 
 ```reason
 pagingEnabled: bool=?
 ```
 
-## refreshControl
+### refreshControl
 
 ```reason
 refreshControl: ReasonReact.reactElement=?
 ```
 
-## scrollEnabled
+### scrollEnabled
 
 ```reason
 scrollEnabled: bool=?
 ```
 
-## showsHorizontalScrollIndicator
+### showsHorizontalScrollIndicator
 
 ```reason
 showsHorizontalScrollIndicator: bool=?
 ```
 
-## showsVerticalScrollIndicator
+### showsVerticalScrollIndicator
 
 ```reason
 showsVerticalScrollIndicator: bool=?
 ```
 
-## stickyHeaderIndices
+### stickyHeaderIndices
 
 ```reason
 stickyHeaderIndices: list(int)=?
 ```
 
-## overScrollMode
+### overScrollMode
 
 ```reason
 overScrollMode: [
@@ -350,49 +348,49 @@ overScrollMode: [
 ]=?
 ```
 
-## scrollPerfTag
+### scrollPerfTag
 
 ```reason
 scrollPerfTag: string=?
 ```
 
-## alwaysBounceHorizontal
+### alwaysBounceHorizontal
 
 ```reason
 alwaysBounceHorizontal: bool=?
 ```
 
-## alwaysBounceVertical
+### alwaysBounceVertical
 
 ```reason
 alwaysBounceVertical: bool=?
 ```
 
-## automaticallyAdjustContentInsets
+### automaticallyAdjustContentInsets
 
 ```reason
 automaticallyAdjustContentInsets: bool=?
 ```
 
-## bounces
+### bounces
 
 ```reason
 bounces: bool=?
 ```
 
-## canCancelContentTouches
+### canCancelContentTouches
 
 ```reason
 canCancelContentTouches: bool=?
 ```
 
-## centerContent
+### centerContent
 
 ```reason
 centerContent: bool=?
 ```
 
-## contentInset
+### contentInset
 
 ```reason
 contentInset: Types.insets=?
@@ -412,7 +410,7 @@ type insets = {
 };
 ```
 
-## contentOffset
+### contentOffset
 
 ```reason
 contentOffset: point=?
@@ -427,7 +425,7 @@ type point = {
 };
 ```
 
-## decelerationRate
+### decelerationRate
 
 ```reason
 decelerationRate: [
@@ -436,13 +434,13 @@ decelerationRate: [
 ]=?
 ```
 
-## directionalLockEnabled
+### directionalLockEnabled
 
 ```reason
 directionalLockEnabled: bool=?
 ```
 
-## indicatorStyle
+### indicatorStyle
 
 ```reason
 indicatorStyle: [
@@ -452,31 +450,31 @@ indicatorStyle: [
 ]=?
 ```
 
-## maximumZoomScale
+### maximumZoomScale
 
 ```reason
 maximumZoomScale: float=?
 ```
 
-## minimumZoomScale
+### minimumZoomScale
 
 ```reason
 minimumZoomScale: float=?
 ```
 
-## onScrollAnimationEnd
+### onScrollAnimationEnd
 
 ```reason
 onScrollAnimationEnd: unit => unit=?
 ```
 
-## scrollEventThrottle
+### scrollEventThrottle
 
 ```reason
 scrollEventThrottle: int=?
 ```
 
-## scrollIndicatorInsets
+### scrollIndicatorInsets
 
 ```reason
 scrollIndicatorInsets: Types.insets=?
@@ -496,13 +494,13 @@ type insets = {
 };
 ```
 
-## scrollsToTop
+### scrollsToTop
 
 ```reason
 scrollsToTop: bool=?
 ```
 
-## snapToAlignment
+### snapToAlignment
 
 ```reason
 snapToAlignment: [
@@ -512,7 +510,7 @@ snapToAlignment: [
 ]=?
 ```
 
-## zoomScale
+### zoomScale
 
 ```reason
 zoomScale: float=?

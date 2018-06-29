@@ -1,5 +1,9 @@
 ---
-id: linking
-title: Linking
-sidebar_label: Linking
+title: Linking (x)
 ---
+
+Missing bindings
+
+## Example of use
+
+## Function parameters

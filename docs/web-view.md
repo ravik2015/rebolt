@@ -1,12 +1,10 @@
 ---
-id: web-view
 title: WebView
-sidebar_label: WebView
 ---
 
-# Props
+## Props
 
-## source
+### source
 
 ```reason
 source: source=?
@@ -37,25 +35,25 @@ let source:
   source;
 ```
 
-## style
+### style
 
 ```reason
 style: Style.t=?
 ```
 
-## renderError
+### renderError
 
 ```reason
 renderError: unit => ReasonReact.reactElement=?
 ```
 
-## renderLoading
+### renderLoading
 
 ```reason
 renderLoading: unit => ReasonReact.reactElement=?
 ```
 
-## onError
+### onError
 
 ```reason
 onError: {
@@ -68,7 +66,7 @@ onError: {
 } => unit=?
 ```
 
-## onLoad
+### onLoad
 
 ```reason
 onLoad: {
@@ -81,7 +79,7 @@ onLoad: {
 } => unit=?
 ```
 
-## onLoadEnd
+### onLoadEnd
 
 ```reason
 onLoadEnd: {
@@ -94,7 +92,7 @@ onLoadEnd: {
 } => unit=?
 ```
 
-## onLoadStart
+### onLoadStart
 
 ```reason
 onLoadStart: {
@@ -107,13 +105,13 @@ onLoadStart: {
 } => unit=?
 ```
 
-## automaticallyAdjustContentInsets
+### automaticallyAdjustContentInsets
 
 ```reason
 automaticallyAdjustContentInsets: bool=?
 ```
 
-## contentInsets
+### contentInsets
 
 ```reason
 contentInsets: contentInsets=?
@@ -133,19 +131,19 @@ let contentInsets:
   contentInsets;
 ```
 
-## accessibilityLabel
+### accessibilityLabel
 
 ```reason
 accessibilityLabel: ReasonReact.reactElement=?
 ```
 
-## accessible
+### accessible
 
 ```reason
 accessible: bool=?
 ```
 
-## hitSlop
+### hitSlop
 
 ```reason
 hitSlop: Types.insets=?
@@ -165,13 +163,13 @@ type insets = {
 };
 ```
 
-## onAccessibilityTap
+### onAccessibilityTap
 
 ```reason
 onAccessibilityTap: unit => unit=?
 ```
 
-## onLayout
+### onLayout
 
 ```reason
 onLayout: RNEvent.NativeLayoutEvent.t => unit=?
@@ -194,13 +192,13 @@ module NativeLayoutEvent: {
 };
 ```
 
-## onMagicTap
+### onMagicTap
 
 ```reason
 onMagicTap: unit => unit=?
 ```
 
-## responderHandlers
+### responderHandlers
 
 ```reason
 responderHandlers: Types.touchResponderHandlers=?
@@ -243,7 +241,7 @@ module NativeEvent: {
 };
 ```
 
-## pointerEvents
+### pointerEvents
 
 ```reason
 pointerEvents: [
@@ -254,19 +252,19 @@ pointerEvents: [
 ]=?
 ```
 
-## removeClippedSubviews
+### removeClippedSubviews
 
 ```reason
 removeClippedSubviews: bool=?
 ```
 
-## testID
+### testID
 
 ```reason
 testID: string=?
 ```
 
-## accessibilityComponentType
+### accessibilityComponentType
 
 ```reason
 accessibilityComponentType: [
@@ -277,7 +275,7 @@ accessibilityComponentType: [
 ]=?
 ```
 
-## accessibilityLiveRegion
+### accessibilityLiveRegion
 
 ```reason
 accessibilityLiveRegion: [
@@ -287,13 +285,13 @@ accessibilityLiveRegion: [
 ]=?
 ```
 
-## collapsable
+### collapsable
 
 ```reason
 collapsable: bool=?
 ```
 
-## importantForAccessibility
+### importantForAccessibility
 
 ```reason
 importantForAccessibility: [
@@ -304,19 +302,19 @@ importantForAccessibility: [
 ]=?
 ```
 
-## needsOffscreenAlphaCompositing
+### needsOffscreenAlphaCompositing
 
 ```reason
 needsOffscreenAlphaCompositing: bool=?
 ```
 
-## renderToHardwareTextureAndroid
+### renderToHardwareTextureAndroid
 
 ```reason
 renderToHardwareTextureAndroid: bool=?
 ```
 
-## accessibilityTraits
+### accessibilityTraits
 
 ```reason
 accessibilityTraits: list(
@@ -342,37 +340,37 @@ accessibilityTraits: list(
 )=?
 ```
 
-## accessibilityViewIsModal
+### accessibilityViewIsModal
 
 ```reason
 accessibilityViewIsModal: bool=?
 ```
 
-## shouldRasterizeIOS
+### shouldRasterizeIOS
 
 ```reason
 shouldRasterizeIOS: bool=?
 ```
 
-## injectJavaScript
+### injectJavaScript
 
 ```reason
 injectJavaScript: string => unit=?
 ```
 
-## injectedJavaScript
+### injectedJavaScript
 
 ```reason
 injectedJavaScript: string=?
 ```
 
-## mediaPlaybackRequiresUserAction
+### mediaPlaybackRequiresUserAction
 
 ```reason
 mediaPlaybackRequiresUserAction: bool=?
 ```
 
-## onMessage
+### onMessage
 
 ```reason
 onMessage: RNEvent.NativeEvent.t => unit=?
@@ -396,7 +394,7 @@ module NativeEvent: {
 };
 ```
 
-## onNavigationStateChange
+### onNavigationStateChange
 
 ```reason
 onNavigationStateChange: {
@@ -409,31 +407,31 @@ onNavigationStateChange: {
 } => unit=?
 ```
 
-## scalesPageToFit
+### scalesPageToFit
 
 ```reason
 scalesPageToFit: bool=?
 ```
 
-## startInLoadingState
+### startInLoadingState
 
 ```reason
 startInLoadingState: bool=?
 ```
 
-## domStorageEnabled
+### domStorageEnabled
 
 ```reason
 domStorageEnabled: bool=?
 ```
 
-## javaScriptEnabled
+### javaScriptEnabled
 
 ```reason
 javaScriptEnabled: bool=?
 ```
 
-## mixedContentMode
+### mixedContentMode
 
 ```reason
 mixedContentMode: list([
@@ -443,31 +441,31 @@ mixedContentMode: list([
 ])=?
 ```
 
-## thirdPartyCookiesEnabled
+### thirdPartyCookiesEnabled
 
 ```reason
 thirdPartyCookiesEnabled: bool=?
 ```
 
-## userAgent
+### userAgent
 
 ```reason
 userAgent: string=?
 ```
 
-## allowsInlineMediaPlayback
+### allowsInlineMediaPlayback
 
 ```reason
 allowsInlineMediaPlayback: bool=?
 ```
 
-## bounces
+### bounces
 
 ```reason
 bounces: bool=?
 ```
 
-## dataDetectorTypes
+### dataDetectorTypes
 
 ```reason
 dataDetectorTypes: list([
@@ -480,7 +478,7 @@ dataDetectorTypes: list([
 ])=?
 ```
 
-## decelerationRate
+### decelerationRate
 
 ```reason
 decelerationRate: list([
@@ -490,7 +488,7 @@ decelerationRate: list([
 ])=?
 ```
 
-## onShouldStartLoadWithRequest
+### onShouldStartLoadWithRequest
 
 ```reason
 onShouldStartLoadWithRequest: iOSLoadRequestEvent => bool=?
@@ -512,7 +510,7 @@ type iOSLoadRequestEvent = {
 };
 ```
 
-## scrollEnabled
+### scrollEnabled
 
 ```reason
 scrollEnabled: bool=?

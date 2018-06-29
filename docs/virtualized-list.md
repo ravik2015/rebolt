@@ -1,9 +1,7 @@
 ---
-id: virtualized-list
-title: VirtualizedList
-sidebar_label: VirtualizedList (x)
+title: VirtualizedList (x)
 ---
 
-Missing bindings
+## Example of use
 
-# Props
+## Props

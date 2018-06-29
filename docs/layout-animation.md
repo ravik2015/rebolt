@@ -1,5 +1,9 @@
 ---
-id: layout-animation
-title: LayoutAnimation
-sidebar_label: LayoutAnimation
+title: LayoutAnimation (x)
 ---
+
+Missing bindings
+
+## Example of use
+
+## Function parameters

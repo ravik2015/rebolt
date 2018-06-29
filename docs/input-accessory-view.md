@@ -1,9 +1,7 @@
 ---
-id: input-accessory-view
-title: InputAccessoryView
-sidebar_label: InputAccessoryView (x)
+title: InputAccessoryView (x)
 ---
 
-Missing bindings
+## Example of use
 
-# Props
+## Props

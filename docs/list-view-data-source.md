@@ -1,9 +1,7 @@
 ---
-id: list-view-data-source
-title: ListViewDataSource
-sidebar_label: ListViewDataSource
+title: ListViewDataSource (x)
 ---
 
-Missing bindings
+## Example of use
 
-# Props
+## Props
