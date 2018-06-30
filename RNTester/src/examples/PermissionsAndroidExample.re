@@ -13,43 +13,30 @@ module ExampleContent = {
   let component =
     ReasonReact.statelessComponent("PermissionsAndroidExampleContent");
 
-  let requestPermissions = () => {
-    Js.log(Platform.os());
-    Js.log(Platform.version());
+  let requestPermissions = () =>
     PermissionsAndroid.request(
       PermissionsAndroid.Permission.SEND_SMS,
       {"title": "Hi!", "message": "Give me permissions!"},
     )
     |> Js.Promise.then_(request =>
          PermissionsAndroid.check(PermissionsAndroid.Permission.SEND_SMS)
-         |> Js.Promise.then_(res => {
-              Js.log(request);
-              Js.log(res);
+         |> Js.Promise.then_(check => {
+              Js.log({
+                "permission": PermissionsAndroid.Permission.SEND_SMS,
+                "version": Platform.version(),
+                "request": request,
+                "check": check,
+              });
               Js.Promise.resolve("res");
             })
        )
     |> ignore;
-  };
 
   let make = _children => {
     ...component,
     render: _children => {
-      Js.log(Platform.os());
-      Js.log(Platform.version());
-      PermissionsAndroid.request(
-        PermissionsAndroid.Permission.SEND_SMS,
-        {"title": "elo", "message": "asd"},
-      )
-      |> Js.Promise.then_(request =>
-           PermissionsAndroid.check(PermissionsAndroid.Permission.SEND_SMS)
-           |> Js.Promise.then_(res => {
-                Js.log(request);
-                Js.log("elo");
-                Js.log(res);
-                Js.Promise.resolve();
-              })
-         )
-      |> ignore;
+      requestPermissions();
+
       <TouchableNativeFeedback
         background=(TouchableNativeFeedback.selectableBackground())
         onPress=requestPermissions>
