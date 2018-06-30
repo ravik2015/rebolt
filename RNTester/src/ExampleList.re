@@ -48,6 +48,8 @@ module ProgressBarAndroid = MakeExample(ProgressBarAndroidExample);
 
 module ViewPagerAndroid = MakeExample(ViewPagerAndroid);
 
+module PermissionsAndroid = MakeExample(PermissionsAndroidExample);
+
 let components: array(item) = [|
   Button.item("ButtonExample"),
   View.item("ViewExample"),
@@ -59,4 +61,5 @@ let components: array(item) = [|
   TouchableNativeFeedback.item("TouchableNativeFeedback"),
   ProgressBarAndroid.item("ProgressBarAndroid"),
   ViewPagerAndroid.item("ViewPagerAndroid"),
+  PermissionsAndroid.item("PermissionsAndroid"),
 |];
