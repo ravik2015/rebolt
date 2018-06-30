@@ -82,6 +82,6 @@ external _request : (string, rationale) => Js.Promise.t(string) = "request";
 
 let request = (permission, rationale) =>
   _request(Permission.getPermission(permission), rationale);
-/*
- [@bs.send];
- external requestMultiple : array(Permission.t) => unit = ""; */
+
+[@bs.module "react-native"] [@bs.scope "PermissionsAndroid"]
+external requestMultiple : array(Permission.t) => unit = "";
