@@ -16,27 +16,16 @@ module ExampleContent = {
   let requestPermissions = () =>
     PermissionsAndroid.request(
       PermissionsAndroid.Permission.SEND_SMS,
-      {"title": "Hi!", "message": "Give me permissions!"},
+      {"title": "Hi!", "message": "I'd like to send SMS!"},
     )
-    |> Js.Promise.then_(request =>
+    |> Js.Promise.then_(_request =>
          PermissionsAndroid.check(PermissionsAndroid.Permission.SEND_SMS)
-         |> Js.Promise.then_(check => {
-              Js.log({
-                "permission": PermissionsAndroid.Permission.SEND_SMS,
-                "version": Platform.version(),
-                "request": request,
-                "check": check,
-              });
-              Js.Promise.resolve("res");
-            })
        )
     |> ignore;
 
   let make = _children => {
     ...component,
-    render: _children => {
-      requestPermissions();
-
+    render: _children =>
       <TouchableNativeFeedback
         background=(TouchableNativeFeedback.selectableBackground())
         onPress=requestPermissions>
@@ -52,8 +41,7 @@ module ExampleContent = {
             (ReasonReact.string("Get CAMERA permission"))
           </Text>
         </View>
-      </TouchableNativeFeedback>;
-    },
+      </TouchableNativeFeedback>,
   };
 };
 
